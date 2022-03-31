@@ -25,38 +25,38 @@ package io.confluent.examples.clients.cloud.model;
 
 public class DataRecord {
 
-    private Long name;
-    private String description;
+    private Object AttributesMap;
+    private String MessageData;
 
     public DataRecord() {
     }
 
-    public DataRecord(Long name, String description) {
-        this.name = name;
-        this.description = description;
+    public DataRecord(Object AttributesMap, String MessageData) {
+        this.AttributesMap = AttributesMap;
+        this.MessageData = MessageData;
     }
 
-    public Long getName() {
-        return name;
+    public Object getAttributesMap() {
+        return AttributesMap;
     }
 
-    public void setName(Long name) {
-        this.name = name;
+    public void setAttributesMap(Object AttributesMap) {
+        this.AttributesMap = AttributesMap;
     }
 
-    public String getDescription() {
-        return description;
+    public String getMessageData() {
+        return MessageData;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setMessageData(String MessageData) {
+        this.MessageData = MessageData;
     }
 
     @Override
     public String toString() {
         return "Foo{" +
-                "name='" + name + '\'' +
-                ", description='" + description + '\'' +
+                "AttributesMap='" + AttributesMap + '\'' +
+                ", MessageData='" + MessageData + '\'' +
                 '}';
     }
 }

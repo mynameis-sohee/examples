@@ -66,8 +66,7 @@ public class ConsumerExample {
         for (ConsumerRecord<String, DataRecord> record : records) {
           String key = record.key();
           DataRecord value = record.value();
-          total_count += value.getName();
-          System.out.printf("Consumed record with key %s and value %s, and updated total count to %d%n", key, value, total_count);
+          System.out.printf("Consumed record with key %s and value %s.", key, value);
         }
       }
     } finally {
