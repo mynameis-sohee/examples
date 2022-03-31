@@ -83,7 +83,7 @@ public class ProducerAvroExample {
     final Long numMessages = 10L;
     for (Long i = 0L; i < numMessages; i++) {
       String key = "alice";
-      DataRecordAvro record = new DataRecordAvro(i, "test");
+      DataRecordAvro record = new DataRecordAvro(i);
 
       System.out.printf("Producing record: %s\t%s%n", key, record);
       producer.send(new ProducerRecord<String, DataRecordAvro>(topic, key, record), new Callback() {
