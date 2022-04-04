@@ -57,8 +57,20 @@
       </pluginRepository>
     </pluginRepositories>
 
+    <dependencyManagement>
+    <dependencies>
+        <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>libraries-bom</artifactId>
+        <version>25.1.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+        </dependency>
+    </dependencies>
+    </dependencyManagement>
 
     <dependencies>
+
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka-clients</artifactId>
@@ -113,6 +125,11 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>${gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.cloud</groupId>
+            <artifactId>google-cloud-bigquery</artifactId>
+            <version>1.116.0</version>
         </dependency>
     </dependencies>
 
@@ -226,6 +243,7 @@
                         </configuration>
                     </execution>
                     <execution>
+                      <?m2e ignore?>
                         <id>test-compile</id>
                         <phase>test-compile</phase>
                         <configuration>
