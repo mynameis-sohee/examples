@@ -57,16 +57,13 @@ public class ConsumerAvroExample {
     final Consumer<String, DataRecordAvro> consumer = new KafkaConsumer<String, DataRecordAvro>(props);
     consumer.subscribe(Arrays.asList(topic));
 
-    Long total_count = 0L;
-
     try {
       while (true) {
         ConsumerRecords<String, DataRecordAvro> records = consumer.poll(100);
         for (ConsumerRecord<String, DataRecordAvro> record : records) {
           String key = record.key();
           DataRecordAvro value = record.value();
-          total_count += value.getCount();
-          System.out.printf("Consumed record with key %s and value %s, and updated total count to %d%n", key, value, total_count);
+          System.out.printf("Consumed record with key %s and value %s, and updated.", key, value);
         }
       }
     } finally {
