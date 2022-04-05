@@ -1,11 +1,23 @@
 {
-  "fields": 
-    [{
-      "name": "count",
-      "type": "long"
+  "connect.version": 1,
+  "fields": [
+    {
+      "default": null,
+      "name": "MessageData",
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    {
+      "name": "AttributesMap",
+      "type": {
+        "type": "map",
+        "values": "string"
+      }
     }
   ],
-  "name": "DataRecordAvro",
-  "namespace": "io.confluent.examples.clients.cloud",
+  "name": "ConnectDefault",
+  "namespace": "io.confluent.connect.avro",
   "type": "record"
 }
